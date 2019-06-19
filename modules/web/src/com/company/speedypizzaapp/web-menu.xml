@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<menu-config xmlns="http://schemas.haulmont.com/cuba/menu.xsd">
+    <menu id="application-speedypizzaapp" insertBefore="reports">
+        <item screen="speedypizzaapp_Customer.browse"/>
+        <item screen="speedypizzaapp_Employee.browse"/>
+        <item screen="speedypizzaapp_Dish.browse"/>
+        <item screen="speedypizzaapp_Ingredients.browse"/>
+        <item screen="speedypizzaapp_DishType.browse"/>
+        <item screen="speedypizzaapp_Orders.browse"/>
+
+    </menu>
+</menu-config>

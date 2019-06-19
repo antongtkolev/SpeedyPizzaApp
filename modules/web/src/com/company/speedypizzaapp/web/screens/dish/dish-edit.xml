@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://editorCaption"
+        focusComponent="form"
+        messagesPack="com.company.speedypizzaapp.web.screens.dish" icon="CUTLERY">
+    <data>
+        <instance id="dishDc"
+                  class="com.company.speedypizzaapp.entity.Dish"
+                  view="dish-full-view">
+            <loader/>
+            <collection id="ingredientsesDc" property="ingredientses"/>
+        </instance>
+        <collection id="dishTypesDc" class="com.company.speedypizzaapp.entity.DishType" view="_minimal">
+            <loader id="dishTypesLc">
+                <query>
+                    <![CDATA[select e from speedypizzaapp_DishType e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="editActions" spacing="true">
+        <form id="form" dataContainer="dishDc">
+            <column width="250px">
+                <textField id="nameField" property="name"/>
+                <textField id="priceField" property="price"/>
+                <timeField id="prepTimeField" property="prepTime"/>
+                <lookupPickerField id="dishTypeField" optionsContainer="dishTypesDc" property="dishType">
+                    <actions>
+                        <action id="lookup" type="picker_lookup"/>
+                    </actions>
+                </lookupPickerField>
+            </column>
+        </form>
+        <groupBox id="ingredientsesBox" caption="msg://com.company.speedypizzaapp.entity/Dish.ingredientses">
+            <table id="ingredientsesTable" dataContainer="ingredientsesDc" width="100%" height="200px">
+                <actions>
+                    <action id="add" type="add"/>
+                    <action id="exclude" type="exclude"/>
+                </actions>
+                <columns>
+                    <column id="name"/>
+                </columns>
+                <buttonsPanel>
+                    <button action="ingredientsesTable.add"/>
+                    <button action="ingredientsesTable.exclude"/>
+                </buttonsPanel>
+            </table>
+        </groupBox>
+        <hbox id="editActions" spacing="true">
+            <button action="windowCommitAndClose"/>
+            <button action="windowClose"/>
+        </hbox>
+    </layout>
+</window>

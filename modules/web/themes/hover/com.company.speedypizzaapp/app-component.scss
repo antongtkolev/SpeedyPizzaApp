@@ -1,0 +1,5 @@
+@import "hover-ext";
+
+@mixin com_company_speedypizzaapp {
+  @include com_company_speedypizzaapp-hover-ext;
+}

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
+
+    <view entity="speedypizzaapp_Customer" name="customer-full-view" extends="_local"/>
+    <view entity="speedypizzaapp_Dish" name="dish-full-view" extends="_local">
+        <property name="ingredientses" view="_minimal"/>
+        <property name="dishType" view="_minimal"/>
+        <property name="orderDetails" view="_minimal">
+            <property name="dish" view="_minimal"/>
+        </property>
+    </view>
+    <view entity="speedypizzaapp_DishType" name="dishType-full-view" extends="_local"/>
+    <view entity="speedypizzaapp_Employee" name="employee-full-view" extends="_local">
+        <property name="user" view="_minimal"/>
+    </view>
+    <view entity="speedypizzaapp_Orders" name="order-full-view" extends="_local">
+        <property name="employee" view="_minimal"/>
+        <property name="customer" view="_minimal">
+            <property name="orderCounter"/>
+        </property>
+        <property name="orderDetails" view="_minimal">
+            <property name="count"/>
+            <property name="dish" view="_minimal">
+                <property name="price"/>
+            </property>
+        </property>
+    </view>
+    <view entity="speedypizzaapp_OrderDetails" name="orderDetails-dish-view" extends="_local">
+        <property name="dish" view="_minimal">
+            <property name="price"/>
+        </property>
+    </view>
+</views>

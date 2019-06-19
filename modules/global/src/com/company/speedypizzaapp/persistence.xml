@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+    <persistence-unit name="SpeedyPizzaApp" transaction-type="RESOURCE_LOCAL">
+
+        <class>com.company.speedypizzaapp.entity.Order</class>
+        <class>com.company.speedypizzaapp.entity.Employee</class>
+        <class>com.company.speedypizzaapp.entity.Customer</class>
+        <class>com.company.speedypizzaapp.entity.Dish</class>
+        <class>com.company.speedypizzaapp.entity.DishType</class>
+        <class>com.company.speedypizzaapp.entity.Ingredients</class>
+        <class>com.company.speedypizzaapp.entity.OrderDetails</class>
+    </persistence-unit>
+</persistence>
